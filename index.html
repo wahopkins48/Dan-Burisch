@@ -1,119 +1,895 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Your original styles unchanged -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>S-4 Intelligence Terminal | Dan Burisch Archive</title>
     <style>
-        /* Paste your entire original <style> block here - unchanged */
         :root {
             --neon-green: #00ff41;
             --dark-bg: #0a0a0a;
             --panel-bg: #1a1a1a;
             --terminal-font: 'Courier New', Courier, monospace;
         }
-        /* ... (all your CSS remains the same) ... */
+        body { background: var(--dark-bg); color: var(--neon-green); font-family: var(--terminal-font); margin: 0; padding: 20px; }
+        .app-container { max-width: 800px; margin: auto; border: 1px solid var(--neon-green); padding: 20px; box-shadow: 0 0 15px rgba(0, 255, 65, 0.2); }
+        header { border-bottom: 2px solid var(--neon-green); margin-bottom: 20px; padding-bottom: 10px; }
+        h1 { font-size: 1.2rem; margin: 0; }
+        .status-bar { font-size: 0.7rem; opacity: 0.8; }
+        #chat-container { height: 400px; overflow-y: auto; margin-bottom: 20px; padding-right: 10px; border-bottom: 1px solid #333; }
+        .message { margin-bottom: 15px; line-height: 1.4; font-size: 0.9rem; white-space: pre-wrap; }
+        .user-message { color: #fff; }
+        .user-message::before { content: "> USER: "; color: var(--neon-green); }
+        .ai-message::before { content: "[DB-MJ9]: "; font-weight: bold; }
+        .input-area { display: flex; gap: 10px; }
+        input { flex-grow: 1; background: transparent; border: 1px solid var(--neon-green); color: var(--neon-green); padding: 10px; font-family: inherit; }
+        button { background: var(--neon-green); color: #000; border: none; padding: 10px 20px; cursor: pointer; font-weight: bold; }
+        button:hover { background: #00cc33; }
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-thumb { background: var(--neon-green); }
     </style>
 </head>
 <body>
     <div class="app-container">
         <header>
             <h1>MAJESTIC-12 INTELLIGENCE NODE</h1>
-            <div class="status-bar">AI UPGRADE ACTIVE | DOC ANALYSIS + INTERNET PREDICTIONS ONLINE [SECURE]</div>
+            <div class="status-bar">AI UPGRADE ACTIVE | S-4 TRANSCRIPT LINKED | INTERNET ACCESS ENABLED</div>
         </header>
 
         <div id="chat-container">
-            <div class="message ai-message">
-                [DB-MJ9-AI] Upgrade complete. I can now analyze the full Dan Burisch document and cross-reference predictions with internet data. Ask about timelines, J-Rod, or predictions.
-            </div>
+            <div class="message ai-message">Terminal initialized. Accessing Majestic-12 archives regarding Dr. Dan Burisch. I have parsed the Project Looking Glass data and the J-Rod (Chi'el'ah) interaction logs. State your query.</div>
         </div>
 
         <div class="input-area">
-            <input type="text" id="user-input" placeholder="Query: Analyze doc on Looking Glass predictions..." autocomplete="off">
-            <button onclick="sendMessage()">Transmit</button>
+            <input type="text" id="user-input" placeholder="Query: Describe the Lotus Project or Timeline 2..." autocomplete="off">
+            <button id="send-btn">TRANSMIT</button>
         </div>
     </div>
 
     <script>
         const chatContainer = document.getElementById('chat-container');
         const userInput = document.getElementById('user-input');
+        const sendBtn = document.getElementById('send-btn');
         
-        // CONFIG: Get free API key from https://openrouter.ai/keys (uses Grok or similar for internet access)
-        const API_KEY = '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';  // ← Paste here
-        const DOC_URL = 'https://docs.google.com/document/d/16bIdyhaGFnhOKz5OmL0MEu4qe4PiNmy4qdtV3JXaJDc/export?format=txt';
+        const API_KEY = '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';
         const API_URL = 'https://openrouter.ai/api/v1/chat/completions';
 
-        // Fallback Burisch keywords (your originals)
-        const fallbackResponses = {
-            "jrod": "Chi'el'ah (the J-Rod) was a P-52 future human. We worked together in the 'Clean Sphere' at S-4...",
-            // ... add all your original responses here ...
-        };
+        // Chapter 1: Introduction to Ancient History and Government Work
+0:00this is mostly ancient history all right asking how ancient suan not that an we're going back to
+0:099 secondsyour engine history oh uh and we're also Focus around the
+0:1515 secondsJ and there's only 10 questions here looks like one was added but um I'm
+0:2323 secondsgoing let you talk whatever you want to talk about I'm just going to ask you the first question we'll continue yeah I just prefer it be more of a conversation
+0:3131 secondsrather than a um the other the other the other um makes me feel as though I'm testifying
+0:3838 secondsand uh I'm prepared to do that as well your right hand and put your left hand on the Bible here was your right handed and as long
+0:4848 secondsas we're in a closed session so help me God yeah conversation is definitely the way to go I'm working on that subpena I
+0:5555 secondstalked to Big Time attorney and we were talking different things and we can discuss that different time yeah he's a great guy too he's a good guy he's
+1:041 minute, 4 secondsexperienced high level as as as I was as I was saying to to bill on the way over here I was ordered to present a copy of
+1:121 minute, 12 secondsmy order to meet him uh at St Mark Square um that order contains an initial
+1:201 minute, 20 secondsof a Committee Member a coded initial of a Committee Member uh from what I understand there's currently a 1716
+1:281 minute, 28 secondssplit and this is this is mostly rumor around the community to to um um forward
+1:351 minute, 35 secondsa public acclamation program having to do with Majestic 12 and the over overseeing committee the old
+1:431 minute, 43 seconds5412 um which is now basically called the committee of the majority as far as I'm I'm told um the questions are just
+1:501 minute, 50 secondsto give us a little structure oh that's fine that's that's fine well that's interesting
+1:581 minute, 58 secondsnews and if I say something or one says something just just answer you know talk to that's
+2:052 minutes, 5 secondsfine the lights are the lights are cumbersome but that's that's fine that's fine that's fine um if you look closely
+2:142 minutes, 14 secondsthey're nice and red from looking through the scope all last night so they can't get much worse
+2:322 minutes, 32 secondsoh okay okay the first question Dan they want to know is where did you work in the mid90s and how did you come to be
+2:412 minutes, 41 secondsemployed there well several locations in the mid 90s I had uh some cover positions here in Las
+Chapter 2: Experiences in the Mid-90s and Government Employment
+2:492 minutes, 49 secondsVegas which made me look like a good oldfashioned Joe in fact I had had some police experience uh at the late 80s um
+2:572 minutes, 57 secondsyou're probably centering your question around around the work for the government um in 1986 I was approached while working as
+3:063 minutes, 6 secondsan undergraduate student in Dr Bert Bell barbero's office um in his in his parasitology laboratory to be exact um I
+3:143 minutes, 14 secondswas looking through a scope at the time uh three gentlemen walked into the laboratory closed the door behind them uh there was um two uniforms in a suit
+3:233 minutes, 23 secondsthat were present both of the uniforms I would make as as most probably being uh United States
+3:313 minutes, 31 secondsum my memory of that one event's kind of hazy after seeing all of the suits and uniforms and whatnot um
+3:403 minutes, 40 secondswe spoke for a while they asked me if I was interested in seeing the world and the like told him I in fact was uh we
+3:493 minutes, 49 secondswent through several several um um interview processes not unlike
+3:563 minutes, 56 secondsthis U and uh reviewed my back ground I went through several background investigations um finally starting up uh
+4:054 minutes, 5 seconds19991 time frame I was I was cleared for working um groom well pass groom to the
+4:124 minutes, 12 secondspapoose uh Mountain facility um that place that doesn't exist about 90 miles north of here um the nowhere
+4:224 minutes, 22 secondsplace um that's how I came to work there my original assignment my original assignment was at the group room Lake
+4:304 minutes, 30 secondsfacility to review uh histopathology slides um and I went through nearly a
+4:374 minutes, 37 secondsYear's testing and then was um basically let loose for a year and I heard no contact from them after that I was
+4:444 minutes, 44 secondsbrought back in and shown some higher grade slides of Unknown Origin uh following that I was int introduced into
+4:534 minutes, 53 secondsa working group and subsequently brought into the papoose facility the site 4 facility
+5:005 minutesum we we worked for well over a year on slides of Unknown Origin
+5:085 minutes, 8 secondsum after I took a minimum leadership position under several of the other
+5:145 minutes, 14 secondsum biologists who are already present um most of which are are now deceased um you know the names of those
+5:235 minutes, 23 secondsindividuals um I was then introduced into the the level four five facility and the 45 coded for nine you're again
+5:325 minutes, 32 secondsaware we covered this in ancient history um and so what we did is is uh introduce
+5:395 minutes, 39 secondsintroduce uh the new members myself amongst them into the into the uh the clean sphere area and we were eventually
+5:475 minutes, 47 secondsshown the subject uh for which we were examining the slides the slides were unusual in that they were in pressurized
+Chapter 3: Project Aquarius and Interactions with Jay Rod
+5:555 minutes, 55 secondscells um and they were they were reviewed by us on a conveyor with a with a completely automatic microscope we weren't touching anything we'd give
+6:036 minutes, 3 secondsverbal commands um at the second instance uh we were finally allowed to have a vrml like keyboard uh for
+6:106 minutes, 10 secondsexamining the slides and I digressed but then working with the uh the jrod itself in the ambassadorial suite or the clean
+6:186 minutes, 18 secondssphere Suite now was this under this project Aquarius yes yes um initially I was assigned as a as a working member of
+6:276 minutes, 27 secondsproject Aquarius uh then finally I was made a a an assistant working group leader um then mysteriously after one
+6:356 minutes, 35 secondsmeeting with the jrod I was asked to take the uh the working group leader position I didn't find out why I was
+6:436 minutes, 43 secondsasked to take the working group leader position until well within this last year I I never understood it because uh
+6:516 minutes, 51 secondsSteven was was older than I was my senior not only in in ability uh but in age and I I would have never figured being Advanced uh above an individual
+7:007 minuteslike that in in ranking within a working group and in fact I never considered myself above him I we work together um
+7:077 minutes, 7 secondsthe Q q94 document that um you have in your possession was co-authored my name went on there as the the primary
+7:157 minutes, 15 secondsinvestigator because I was the working group leader but in fact he and I were both involved in the authoring of that
+7:227 minutes, 22 secondsdocument okay now could you explain briefly uh what you were briefed on on
+7:297 minutes, 29 secondson who and or what jrod was initially I was brief that jrod was an alien uh
+7:377 minutes, 37 secondsspecifically from the reticulum system two reticulum 4 uh I had no idea the
+7:437 minutes, 43 secondstruth yes from two reticulum for now but I had no idea the truth of how they came to
+7:517 minutes, 51 secondsbe um as I said to you before I have never met an alien but I have met an extraterrestrial M um I
+8:018 minutes, 1 secondfound out subsequent to to uh interactions with the jrod and again they have they have personal names the
+8:098 minutes, 9 secondsterm jrod simply means 15 which was a a basing name for where they're located the number of light years from from our
+8:168 minutes, 16 secondslocation so they took those names uh and they identified through the sigma protocols the linguistic protocols with
+8:238 minutes, 23 secondsa rod symbol which was a uh an inertia symbol and the letter J and in fact that was a combination
+8:308 minutes, 30 secondsof Mayan and Egyptian numerology having to do with a rod and a j meaning 10 and five for
+8:388 minutes, 38 seconds15 okay um now 15 light years away is that the lece 876 876 Charly from what
+8:468 minutes, 46 secondsI've been told now he he he did not specifically tell me that that was the location but the number 15 was
+8:548 minutes, 54 secondsmentioned they don't call it apparently G8 76 whatever Char how did jod get here I mean how did he you know 15 light
+Chapter 4: The Crash of Jay Rod and His Transport
+9:029 minutes, 2 secondsyears away he crashed in 63 from what I understand oh was that right outside of uh Kingman okay Kingman Arizona right uh
+9:129 minutes, 12 secondsthere there was a problem involving his physiology and his biophysiological um communication with
+9:209 minutes, 20 secondsthe craft went wrong and of course he's he's ill as we know with the the mgus and the par of protein Associated
+9:279 minutes, 27 secondsproblems um and he crashed and how was he was he transported immediately from
+9:379 minutes, 37 secondsthat crash site to the S4 facility and how that I don't know okay that I don't
+9:449 minutes, 44 secondsknow you don't know how he was he came to be at the facility I I I believe I believe he and uh Associates were
+9:529 minutes, 52 secondstranser transferred separately um he to the he to the uh originally to the Groom Lake facility uh
+10:0210 minutes, 2 secondsand an associate to I believe Los Alamos um I have no independent
+10:1010 minutes, 10 secondsverification of where the associate went though all I can say is that he was there at site four right now you interacted with jrod was
+10:2010 minutes, 20 secondsthere a general procedure for this interaction well there was not a general procedure there was a very specific procedure very specific okay um after we
+10:2910 minutes, 29 secondswould be brought in with our helper biologists there was controlling helper biologists those in the in the gallery and then the the the introduction
+10:3710 minutes, 37 secondsspecialist which was myself on a number of occasions um we entered the clean sphere through a large series of
+10:4510 minutes, 45 secondsprotocols involving uh um pressurization uh and compartmentalization no pun intended um
+10:5410 minutes, 54 secondsuntil finally we were pressurized and in fully encapsulated a Tec a tees total encapsulated suit for entrance into the
+11:0211 minutes, 2 secondsclean sphere um once we were pressurized and entered into the clean sphere um well I should digress we had medical
+11:1111 minutes, 11 secondsmedical evaluation and all of that first but um they they ceased doing that after a couple medical evaluations it was more just interested let's get you in and get
+11:1911 minutes, 19 secondsthe work done um I would enter into the into the clean sphere and I was not
+11:2511 minutes, 25 secondssupposed to um communicate with the jrod at all I was not supposed to know his
+11:3311 minutes, 33 secondsname um the reality is we were communicating from the time that I entered into the the uh ambassadorial
+11:3911 minutes, 39 secondsSuite external to the clean sphere um talking back and forth freely I could hear whatever he was
+11:4711 minutes, 47 secondsprojecting at me from thought and he could very clearly hear what I was thinking uh I say here meaning
+11:5411 minutes, 54 secondsperceive um I was supposed to stand over by a hologram projection system which was run as like a teleprompter system over to my right that would be run
+Chapter 5: Communication Protocols with Jay Rod
+12:0312 minutes, 3 secondsinside of the clean sphere glass um hold my hand up and and mimic certain signs and it became a joke it really did it
+12:1112 minutes, 11 secondsbecame a joke the the those folks who are who are watching from the gallery running the show thought that I was standing there and mimicking the signs
+12:1912 minutes, 19 secondsand this was the only communication underway um they perceived on the day that the that the approach the the close
+12:2712 minutes, 27 secondsapproach that he made the the uh the grabbing incident that he uh that he did with me um he they perceived that
+12:3412 minutes, 34 secondsthere was a communication that occurred so I began getting questioned quite extensively whether or not he in fact was communicating with me because he had
+12:4212 minutes, 42 secondspromised not to apparently with the sigma unit um and uh I alluded to the fact that there was conversation
+12:5012 minutes, 50 secondsunderway but I didn't talk about what it was until of course the um I was caught
+12:5812 minutes, 58 secondsin my research protocol forwarding ideas that were somewhat different than what they expected where they expected my my
+13:0613 minutes, 6 secondsprivate research was going to go and this is much later and at that time the the deal was broker to find out about the doctrine for the convergent timeline
+13:1413 minutes, 14 secondsParadox I told them a little bit about what he showed me a little bit and they
+13:2013 minutes, 20 secondstold me a little bit about the dctp um now that you brought that up
+13:2813 minutes, 28 secondswhich implies travel through time space and you said that jrod was retrieved
+13:3513 minutes, 35 secondsfrom Crash Your Kingdom um was he at that time just traveling through space
+13:4413 minutes, 44 secondsfrom the staging area or yes yeah okay yes he wasn't doing any time traveling that no not as far as I'm aware okay not
+13:5313 minutes, 53 secondsas far as he told me no can you describe jrod to us what he looked like and how
+13:5913 minutes, 59 secondshe behaved yes the um the gentleman uh with which I was uh
+14:0814 minutes, 8 secondsAssociated was approximately 3 and 1/2 ft tall uh he had a dark brown appearance
+14:1414 minutes, 14 secondsvery Ry appearance to his skin he was in a highly pressurized cleen sphere uh he
+14:2214 minutes, 22 secondsexuded glycoprotein like material through pores on his skin um which was associated with the
+14:3114 minutes, 31 secondsthe neuritis the neuropathy that we were which we were dealing did this have an order to um I don't know I don't know I
+14:3814 minutes, 38 secondscouldn't perceive any odors whatsoever I was inside by but um I would imagine I would imagine you know but I have no
+14:4714 minutes, 47 secondsdata set to say what it would have smelled like and in fact there was nothing I read that uh um indicated
+14:5414 minutes, 54 secondswhether or not there was an odor why I'm wondering I'm wondering you've asked that before that's why I wondering well I've heard about this um secretion
+Chapter 6: Description of Jay Rod and His Condition
+15:0415 minutes, 4 secondscoming through the pores of the skin before and there have been those who've had encounters who say they could smell an
+15:1215 minutes, 12 secondsodor okay from the skin all right um where were we you were
+15:2015 minutes, 20 secondsdescribing um 3 and A2 fet large head in comparison to torso um so the ratio of
+15:2815 minutes, 28 secondsuh the cranial of the Torso area would be larger than uh what we would call a modern human being
+15:3515 minutes, 35 secondsum large bulbous black eyes the the whites of the eyes had uh been selected out uh so it looked like a large pupil
+15:4415 minutes, 44 secondsbasically when you look into his eyes you feel like you're going to fall into his eyes forever and I think that probably had something to do with the telepathic
+15:5315 minutes, 53 secondsnature of his of his mental structure um large arms length large
+16:0016 minuteslength um four very thin sinuous fingers uh Nails not as long as
+16:0816 minutes, 8 secondspresented in some of the images that you've showed me in the past um the ones done by Tom Mack was it Tom oh yeah
+16:1716 minutes, 17 secondsthat's it the Puppet Master uh photos I'm smiling because I Puppet
+16:2416 minutes, 24 secondsMaster leads me to other nicknames but uh um he was hunched over most of the time
+16:3116 minutes, 31 secondscould not support himself fully uh given muscular atrophy and that had to do with the the uh the peripheral neuropathy
+16:4016 minutes, 40 secondsunder which he was suffering um so he would Grunt and move toward me almost in
+16:4916 minutes, 49 secondsa flopping fashion uh feet were were large in comparison to what we would uh you know say our feet would be um he was
+16:5916 minutes, 59 secondsunclothed four and he was uh he was uh unclothed um which bothered
+17:0817 minutes, 8 secondshim um he wanted to wear clothing and uh was refused and every turn um called himself called himself
+17:1717 minutes, 17 secondscaptive and uh in justifiably so um his uh feet were unusual and that
+17:2617 minutes, 26 secondsuh his his uh plantar area had a very large knob underneath what we would call our
+17:3417 minutes, 34 secondsheel um his uh his facial features were grotesque in comparison to what he
+17:4217 minutes, 42 secondsshowed me what normal would be uh he was um normal of his type yes yes um his uh
+Chapter 7: Jay Rod's Emotional State and Intelligence
+17:5117 minutes, 51 secondshis um he was bilaterally symmetrical to the extent that uh uh the disease process was not changing changing his
+17:5917 minutes, 59 secondsfacial figures his features um uh nose was recessed not a nose like we have but
+18:0718 minutes, 7 secondsbasically two two orcula two orifices um an extremely small uh
+18:1618 minutes, 16 secondsmouth um a hard pallet no teeth um his musculature again it was it
+18:2318 minutes, 23 secondswas suffering from the from the the the problem at the mural Junction due to the neuropathy you have any idea what his
+18:3118 minutes, 31 secondschronological age was uh 622 622 and and that is a that is a that I
+18:4118 minutes, 41 secondsdon't know that I don't know um that number 622 is now used as
+18:4818 minutes, 48 secondsa an important number within the community a a a a reference a request
+18:5518 minutes, 55 secondsfrom 622 or a report from 622 could be from anybody um so it's it's used in fact the
+19:0419 minutes, 4 secondsthe SR SRP report uh that I have with me today the the supplemental report for 0302 um that I have um probably is
+19:1419 minutes, 14 secondslabeled from reviewer 622 I haven't again again it's going to be a cold reading when we look at it but it's probably from
+19:2219 minutes, 22 seconds622 um they excrete in a manner that we would excrete uh their external genitalia are
+19:3119 minutes, 31 secondsdifferent than ours the the the females have somewhat like volet but they have a clasper
+19:3819 minutes, 38 secondssituation um the male has a male clasper the female female claspers and if um it looks like a
+19:4619 minutes, 46 secondsdisc with rectangular solids that are rotated into position for clasping at
+19:5319 minutes, 53 secondsthe uh ininal region uh they do have internal fertilization now this was something you read because you didn't see a female no this is something he
+20:0220 minutes, 2 secondsshowed me of his wife oh internally yes and how was that image presented to you did it
+20:1020 minutes, 10 secondsappear I was inside the image you were inside the image that's what it felt like like virtual reality yes everything
+20:1820 minutes, 18 secondseverything that he showed me when he this was this was the the incident um when he projected it into me
+20:2720 minutes, 27 secondsit it it felt like like I was there
+20:3520 minutes, 35 secondsum my Sensations were were were heightened quite
+20:4320 minutes, 43 secondsextraordinary was there a background perceived was she in a doile of some sort uh a
+Chapter 8: The Nature of Jay Rod's Communication
+20:5120 minutes, 51 secondsa get excuse the pun a gray surrounding very very dull dra surrounding almost like a
+21:0021 minutesum a concrete evacuation uh Center you'd have evacuation zones
+21:0721 minutes, 7 secondsunderneath the hotels in case of a mass mass casualties or a mass disaster uh where there it's a very was a very
+21:1421 minutes, 14 secondsclinical environment so were you impressed that he was kind of depressed about his
+21:2121 minutes, 21 secondssituation he was extremely depressed uh if if we were to term him human I would I'm psychologist but I
+21:2921 minutes, 29 secondsthink he would be termed as clinically depressed he wept but he didn't weep outside he wept when he was with
+21:3721 minutes, 37 secondsme well how could you estimate what his level of intellect was smarter than
+21:4521 minutes, 45 secondsme he was smarter than me by by a long range did he have a wide range of knowledge um the
+21:5221 minutes, 52 secondsmathematics that he showed me um blew my mind was that
+21:5921 minutes, 59 secondsright um it uh he he showed me um concurrently not only not only the the
+22:0722 minutes, 7 secondsum the equations for the rule of nines but he also did so diagrammatically and he did so with
+22:1622 minutes, 16 secondsthree-dimensional like a vrml system uh where I was watching cubes come together
+22:2322 minutes, 23 secondsum so that if I was not understanding apparently if I was not understanding The Script I would understand it as a child learns
+22:3122 minutes, 31 secondsgroups group theory in mathematics um highly
+22:3922 minutes, 39 secondsevolved uh highly intellectual um highly repressed
+22:4722 minutes, 47 secondsemotionally when when I was with him uh I felt great happiness to be with him but I
+22:5622 minutes, 56 secondscould feel his great sadness not only because of what he wanted to become what
+23:0323 minutes, 3 secondshe knew he was by being present with us but
+23:0923 minutes, 9 secondswhat where he was and how he was being treated um he was not part of the group
+23:1823 minutes, 18 secondsthat has to be catered to involving the the the T9 treaty that was just signed uh he wanted to help he was willing but
+23:2823 minutes, 28 secondsI went in for God's sakes the the uh I took well over well nearly 300 uh
+23:3523 minutes, 35 secondsindividualized aspiration samples from from his neurological system he would hold his arm out for me to take
+23:4323 minutes, 43 secondshim there was no pain medication and whenever I would fire the the the U introduction system to remove
+23:5223 minutes, 52 secondsthe sample take the it was an aspirative evulsion system uh he would cry and then he would just stand there and
+24:0024 minuteslook at me there was a suction yes yeah in fact it I I would I would bring the I
+Chapter 9: Personal Reflections and Future Intentions
+24:0624 minutes, 6 secondswould bring the um the uh um sample after the the initial initial removal
+24:1424 minutes, 14 secondsfrom his from his tissues into the into the introduction system and then approve it move it from there to one of the
+24:2124 minutes, 21 secondshelper biologist usually it was uh it was Robert um outside of the clean sphere and then he would move it from
+24:2924 minutes, 29 secondsthere to be handled under under our normal protocol it was a level five past our you know bmbl system
+24:3824 minutes, 38 secondsum he' just stand there and take it
+24:4424 minutes, 44 secondsso do you feel the communication that he established with when you were in
+24:5224 minutes, 52 secondscontact with you could he extend his communication over any distance
+24:5924 minutes, 59 seconds60 feet 60t definitely 60 feet as was 60 feet from the center of the clean sphere to the introduction ramp going down into
+25:0725 minutes, 7 secondsthe ambassadorial suite so at least 60 ft so you don't feel like he's been in communication with you since that time
+25:1625 minutes, 16 secondsno okay no is it selective in some way was it willfully selective on his part who he
+25:2525 minutes, 25 secondswanted toate yes yes uh the folks that the folks that uh I'm sorry the folks the the the folks
+25:3425 minutes, 34 secondsthat wanted to uh find out what he was saying to me um they knew darn well that
+25:4425 minutes, 44 secondshe was communicating with me after a while because I was smiling I couldn't help it because we were actually joking back and forth um
+25:5225 minutes, 52 secondsand you know they didn't know they didn't have any clue they didn't have any clue what he was saying so it had to have been selective they certainly
+26:0026 minuteswouldn't have pressed me like they did um after I woke up from the the big attention scenario um I woke up outside of the
+26:0826 minutes, 8 secondsclean sphere I was drug out of there by Steven um he finally got a secondary suit on and uh druged me out of the
+26:1526 minutes, 15 secondsclean sphere um no they had no clue they had no clue what he was saying I'm sure of it they
+26:2326 minutes, 23 secondsthey they were they were extra rough in removing my plug and my uh my catheter and all of that business after I got out of the
+26:3026 minutes, 30 secondstees yeah one of the things that I want to ask you now parting slightly from this
+26:3726 minutes, 37 secondssubject um we're going to ask this last question then we're going to take a break okay and then we'll see where we
+26:4626 minutes, 46 secondsgo from there but I'm smiling I'm smiling because I'm envisioning the lack of the lights yeah okay but everybody I
+26:5526 minutes, 55 secondsdon't like this at all why and of course you're going to have to restate this again why are you talking
+27:0227 minutes, 2 secondsto us now what is your intention and telling us about this about you're
+27:0927 minutes, 9 secondsinvolved it's multifocal it's it's it's multifocal there's there's several reasons
+27:1527 minutes, 15 secondsum the largest reason is not the most important reason the largest reason from
+27:2227 minutes, 22 secondsa personal perspective is to step out from under the Black Ops
+27:2927 minutes, 29 secondscommunity and retire I'm ready um I told you before I can see
+27:3727 minutes, 37 secondsmyself walking along a pond and not being bothered by anybody except for maybe a a bird here or there and taking a sample and
+27:4427 minutes, 44 secondsjust taking my time and looking at it for for fun for enjoyment and you're worried about your right well my health
+27:5227 minutes, 52 secondsis my health is degrading there's no doubt about that um the heart disease that I have is in fact degrading my health um time is
+28:0128 minutes, 1 secondcoming I don't know I don't know how long that is and of course that's within God's Providence so you like to maybe
+28:0928 minutes, 9 secondstake have some freedom to have some on your own to go to Walden's Pond or something right study the life disappear
+28:1828 minutes, 18 secondsat Walden's Pond right um there are other reasons too you know without
+28:2428 minutes, 24 secondswithout yelling the poor me scenario um yes people have a right to know I mean
+28:3228 minutes, 32 secondsthat's you know other folks um uh have have screamed that some of them I think
+28:3828 minutes, 38 secondsreal some of them onlyon is a $3 bill um yes they have a right to know
+28:4628 minutes, 46 secondswhat is going on they have a right to know because this is their
+28:5328 minutes, 53 secondsfuture or maybe not and it depends upon our wisdom or lack
+29:0029 minutesthereof um this gets me thinking the the the one thing that we that we've
+29:0929 minutes, 9 secondsheard from The Brookings institution study the famous clamp study um was
+29:1829 minutes, 18 secondswas this would cause a great uh social upheaval it would destroy our social
+29:2629 minutes, 26 secondsbonds our religious bonds and in fact when I know I'm digressing but I ramble uh
+29:3529 minutes, 35 secondsthe every time an individual is approached with the issue of would this destroy your
+29:4329 minutes, 43 secondsfaith I have heard it's my experience only I'm sure there are going to be varied opinions no it would no it would
+29:5029 minutes, 50 secondsstrengthen it it had strengthen it from a certain perspective yes from
+29:5829 minutes, 58 secondsanother perspective no the Bings institution was correct on a certain
+30:0630 minutes, 6 secondslevel suspend disbelief for a moment and and walk with the idea that this is
+30:1630 minutes, 16 secondsreal that the the ruins that are present on the moon and on
+30:2330 minutes, 23 secondsMars the ancient temples were in fact in our in fact the gifts of our own
+30:3230 minutes, 32 secondsprogeny can you imagine what is going to happen when those
+30:3930 minutes, 39 secondstemples which were prayed to as the gods are found out to be nothing more than
+30:4630 minutes, 46 secondsthe creations of men that the men themselves were those who were being
+30:5530 minutes, 55 secondsworshiped will fall headlong into the pool of
+31:0331 minutes, 3 secondsNarcissus and maybe that's a good thing maybe that's a good thing maybe
+31:1131 minutes, 11 secondswe'll find truth um love God and something other than buildings
+31:1931 minutes, 19 secondsand uh stones and marble maybe we'll find out who he really is or she
+31:2831 minutes, 28 secondsit or just us take a break please take five minutes
+31:3731 minutes, 37 secondsyeah take five minutes and talk about what we just talked about yeah I I missed a little bit about the
+31:4531 minutes, 45 secondsclean sphere entrance in terms of suiting up preparing yourself you did mention the medical exams which out after a while right but uh in the other
+31:5331 minutes, 53 secondstap you talked a little bit more about some of the mechanical specifics just to give a image of that's fine what it's like for you to do it that's fine okay
+32:0132 minutes, 1 secondthat the int the introduction the introduction Gantry the the um the swinging s yes those things all I'm
+32:1032 minutes, 10 secondsinterested in adults one thing at a time um the other thing is that might be
+32:1932 minutes, 19 secondspertinent to what you just did what you just spoke about was what you were looking at slide wise um prior to
+32:2732 minutes, 27 secondsknowing you what the Unknown Origin material was what its origin was you know just what was you were looking at all right
+32:3532 minutes, 35 secondswithout want me to get into the the micro well maybe just just a general statement of what that was what you thought you were looking at just to give
+32:4332 minutes, 43 secondsus a little that's a good one um I had I had no clue and in fact they brought in they
+32:5132 minutes, 51 secondsbrought in a who we got on our side a biochemist to turn our attitudes around and uh after about a year he didn't turn
+33:0033 minutesour attitudes around he finally joined us um and finally said no we can't do this without finding out the origin of the
+33:0833 minutes, 8 secondstissue we needed to find out see we were dealing with it we were dealing with a situation where where it was in
+33:1533 minutes, 15 secondsvitro uh we might want to go back on camera for this so that's fine okay um and the other thing that I think we we
+33:2333 minutes, 23 secondsyou you made a very good statement about why you're doing this I'm wonder if there's any anything else we can do for you anything else you can say that is of
+33:3233 minutes, 32 secondsvalue to you that we can record for you as far as what you hope to how you how you hope to get out what it is about I
+33:4133 minutes, 41 secondsmean you said it's your health and a number of other things I'm just I'm just wanted to put it to you that there's anything else that comes to mind that you'd like to add in that in that regard
+33:5033 minutes, 50 secondsin terms of you know what is you trying you're trying to accomplish because I know I like to tell I would like to tell our elected government what we doing
+33:5833 minutes, 58 secondsmaybe you should say that you know I mean under the appropriate circumstances because there are military
+34:0534 minutes, 5 secondsapplications um that uh need to be handled in a very careful manner for
+34:1234 minutes, 12 secondsexample um or yeah for example understand those those issues we're going to be extremely careful
+Chapter 10: Military Applications and Cautionary Measures
+34:1934 minutes, 19 secondsabout here today because uh um they should be taken with great care of course our our object which I including
+34:2734 minutes, 27 secondsthe the the military applications for Lotus I know that we're we're somewhat constrained for time today well how much
+34:3434 minutes, 34 secondslong do we have it's only3 how much time do we have we've got time I have to be back at 1900 1900 7 7
+34:4234 minutes, 42 secondso' okay okay all right okay good well what I what my what I wanted to do was the only other thing I had to say was
+34:5034 minutes, 50 secondswe're trying to focus on and you it's been great support very focused very very Central to the jrod interaction
+34:5834 minutes, 58 secondswe felt that was the best way to introduce you to our next stage right now we can talk about ANW we got plenty of tape as long as you can stay on the
+35:0535 minutes, 5 secondslights you know I I beyond the three things I just Mi anything you might want to bring
+Chapter 11: The J-Rod Interaction and Its Implications
+35:1235 minutes, 12 secondsup do you think that thing do you think that thing is real what piece of paper you showed me the
+35:2435 minutes, 24 secondsletters see we spoke we we spoke about another individ who has a heart condition um I figured that it was a
+35:3135 minutes, 31 secondsneed to know it was a need to know basis above that um I didn't figure that there was
+35:4235 minutes, 42 secondsdirect you see and and and the the rumors coming at me about the potential for public
+35:4835 minutes, 48 secondsacclamation um that would be for him um those those
+35:5635 minutes, 56 secondsinitials to to to um take back as the hero as the hero in the situation
+36:0536 minutes, 5 secondsbecause he loves playing the hero um and you show me a piece of paper that says ordered to
+36:1536 minutes, 15 secondsremain ostensibly that's what I meant order to remain in the capacity uh which means that there is
+36:2336 minutes, 23 secondsa greater Loop of had the the the chance speak with the individual one time um
+36:3136 minutes, 31 seconds[Music]
+36:3236 minutes, 32 secondsand funnier than hell he really was um I heard that there was a a transcript
+36:4136 minutes, 41 secondsinvolving that that got out in fact uh um um I was shown one time first the
+36:4836 minutes, 48 secondsfirst meeting the one where I bolted the one where you scared the hell out of me not as much as you did today but
+36:5736 minutes, 57 secondsin a little more relaxed circumstance I infer their use and I've
+Chapter 12: Biological Warfare and Microglial Cells
+37:0337 minutes, 3 secondsseen the C with of the word refers to e i inferred the use of the word clock
+37:1437 minutes, 14 secondsrefers to time on I would buy that before we before we
+37:2337 minutes, 23 secondslet's talk a little bit about the things we just discussed um what was it that you thought you were were looking at when you were looking at these slides of
+37:3037 minutes, 30 secondsmaterial of unnown origin well we we were looking we were looking at extremely minute micral cells we knew
+37:3837 minutes, 38 secondsthat they were eukaryotic however they were unusual in the sense that their cytoplasm and their
+37:4537 minutes, 45 secondsinternal organization uh the organel structures were fused um um such as such
+37:5237 minutes, 52 secondsas dicomes to mitochondria things like that and uh we we had no no idea what we were looking at the the original
+Chapter 13: Preparation for Entry into the Hemisphere
+38:0038 minutescontention um made by the individuals next to me was that we were looking at some type of biological
+38:0838 minutes, 8 secondswarfare material uh in intermediate and they had more
+38:1638 minutes, 16 secondsexperience they have more experience uh than me involving such matters so and being that I was new I was letting them
+38:2438 minutes, 24 secondstake the lead great now let's talk little the second one was um tell us a little bit more in
+38:3338 minutes, 33 secondsdetail about the physical aspects preparing for an enter the fine well we would undergo a medical examination at
+38:4038 minutes, 40 secondsleast during the the the early time frame uh of the introductions the 92 time frame um 91 to '92 when we were
+38:4938 minutes, 49 secondsdoing introductions we had regular systematic uh Medicals by a physician um following that we would be
+38:5738 minutes, 57 secondssuited well we would be catheterized plugged uh and
+39:0539 minutes, 5 secondssuited um communication apparatus was placed on our heads um we had a cooling
+39:1239 minutes, 12 secondssystem set up it was for all uh intents and purposes it was a space suit it was a total encapsulated suit something like
+39:1939 minutes, 19 secondswhat you would find uh in an Assa facility not so much uh something that uh you would see or for instance at us
+39:2639 minutes, 26 secondsSam CDC uh that type of level four suit it was more of a regular space type suit with joints uh we were suited up we were
+39:3539 minutes, 35 secondspressurized uh and then walked with our cooling system and our hosing down a ramp into the ambassadorial suite um following that we were led up a Gantry
+39:4339 minutes, 43 secondsway which had been moved into position uh by the clean sphere which had been previously rotated up through an iris through the floor uh he was held
+39:5239 minutes, 52 secondsactually below the ambassadorial suite level and that was raised up uh at needed what they did with him down
+40:0040 minutesthere he didn't say and they didn't tell me it was not a need to know issue apparently they dealt with the cleaning of the of the sphere and all of that
+40:0840 minutes, 8 secondsdown there the regular housed animal maintenance as they treated him um we would be led up the Gantry way the hoses
+40:1740 minutes, 17 secondswould be hooked into uh an exterior um interior I'm sorry system uh inside the doorway which was exterior to the clean
+40:2540 minutes, 25 secondssphere um and it was called the exterior system in fact but and we would be led in uh the door would be closed and we
+40:3240 minutes, 32 secondswould be pressurized inside of the inside of the Gantry way uh following that there was a drum system that was set up uh once there was an equal
+40:4140 minutes, 41 secondspressurization between the Gantry way and the clean sphere we would then be told to proceed forward uh I would raise
+40:4840 minutes, 48 secondsa hand uh in in acknowledgement uh we were not supposed to talk at the time at all because uh um nothing verbal around
+Chapter 14: Medical Examination and Communication Systems
+40:5740 minutes, 57 secondsthe the specimen around the J Rod um why I was never told but we were not supposed to talk around the J
+41:0541 minutes, 5 secondsRod um I moved the drum system and re-hooked a secondary set of hosing inside the
+41:1341 minutes, 13 secondsclean sphere um check the pressurization and once that was done the door to the clean sphere would be closed behind me and I would presume that the
+41:2141 minutes, 21 secondspressurization remain the same in the the Gantry way uh following that I would do my business inside of the clean spere involving contacting the J rod and
+41:2941 minutes, 29 secondsremoving the samples and what was the reason you were
+41:3641 minutes, 36 secondsremoving samples we were removing samples to attempt a treatment uh a full
+41:4341 minutes, 43 secondsdiagnosis and a treatment for a paraprotein related monocom gammopathy of Uncertain significance type disorder
+41:5241 minutes, 52 secondsum which had uh various attributes to it among which were were a cocaine type
+42:0042 minutespresence to the to the jrod cocaine syndrome type presence um and um certain
+Chapter 15: Genetic Issues and Charcot-Marie Tooth Disorder
+42:0842 minutes, 8 secondsgenetic um um issues involving chromosome 5 and 17 which led us to shal
+42:1642 minutes, 16 secondsMarie tooth disorder um and um their their glycoprotein their antifreeze glycoprotein uh um problems they were
+42:2642 minutes, 26 secondsessenti essentially they were losing heat because of the problems at their their axml ridges um they were not
+42:3442 minutes, 34 secondstransmitting the energy something like a a distrophy um when action potential goes down a um a nerve while their Action potentials
+42:4242 minutes, 42 secondswere dying at the at the synapse uh they were also losing energy because there was a demalation process underway that
+42:5042 minutes, 50 secondsdemalation process was uh well since the q94 document uh was tied to to a um
+42:5842 minutes, 58 secondscmt1a like problem the sh Marie tooth problem called pmp22 which is a a um
+43:0643 minutes, 6 secondsprotein number 22 which uh an overexpression of that gene causes a a um a greater
+43:1443 minutes, 14 secondsdemyelination um we tied that to the to the demyelination issue um uh involving the promoters for the the
+43:2343 minutes, 23 secondspmp22 uh those promoters there's two promoters for it um were selectively deselected uh with the use of tfos or
+43:3343 minutes, 33 secondsTriplex forming Alon nucleotides it's essentially a uh uh an ssdna uh um Vector expression system that we're
+43:4243 minutes, 42 secondsusing oops you're staring at me Bill I'm sorry Bill one thing one when when you
+43:5043 minutes, 50 secondswhen you speaking when you don't sort up Mak any noise it's just no that's good that's a okay keep to
+43:5843 minutes, 58 secondsnoing all he's been doing is noing I shouldn't so do you want to simp sorry no I don't actually no I sorry I
+44:0544 minutes, 5 secondsactually some of it I'm sorry um doesn't that interfere the demyelination process okay
+44:1444 minutes, 14 secondsisn't that similar to conditions that humans sometimes have like what is it muscular distrophy no the
+44:2244 minutes, 22 secondsthe yeah except for he wasn't forming plaques okay he wasn't forming pla he was simply dementing uh repairing the demyelination
+44:3244 minutes, 32 secondsarea with the the immune system uh they've got a a a cell mediated immune system humoral system just like we
+44:4044 minutes, 40 secondshave uh the the cells are different they've got they've got filipodia but uh very very strange
+44:4844 minutes, 48 secondslooking uh blood-like material um but uh it's like it but that's why we Ed the
+44:5744 minutes, 57 secondsterm analog so much because it was different it was different can we talk a little bit about um some General
+Chapter 16: Site 4: A Glimpse into the Facility
+45:0545 minutes, 5 secondsgeneralities around the building in which you worked the sort of you know how many floors it was or where it was located sure how you got there you you
+45:1445 minutes, 14 secondswant an experience of site 4 watch the Andromeda train except for there's a little more
+45:2145 minutes, 21 secondscolor inside a site for uh they've got a nice orange stripe on the wall and they've got a red and blue stripe on the
+45:2845 minutes, 28 secondsfloor which gives you General directions depending upon the the uh the floor you're on and you can't move without
+45:3445 minutes, 34 secondsgetting stopped anyway um the now we're talking separate to the groom facility here um I'm Weare of several floors at
+45:4345 minutes, 43 secondsthe groom facility and then finally the majority of the hot stuff was taken over to site 4 um we're talking four basic
+45:5145 minutes, 51 secondslevels uh the first level and they're coded 41 42 43 44 and finally where he was stored as
+45:5945 minutes, 59 seconds45 and and that 45 designation was painted on the wall for him because 4 and five is nine right that's why in
+46:0846 minutes, 8 secondsfact they built nine hangers M on the the Galileo and sidekick levels uh the 41 level the 42 level contained
+46:1746 minutes, 17 secondscontained uh the Looking Glass Alice's glass um in fact outside of the door for the major facility there's a white
+46:2546 minutes, 25 secondsrabbit with a clock a very large it's a it's a statue that's probably about that tall and it's held above the doorway it's wired above the
+46:3446 minutes, 34 secondsdoorway um the Looking Glass I I find out is one
+46:4246 minutes, 42 secondsof the erbs it's an Einstein rosenbridge promoter uh it uses some form of this is
+46:5046 minutes, 50 secondsfound out Jesus Christ the last two weeks asking the right questions there I
+46:5646 minutes, 56 secondsguess um it's it's composed of a spherical spinning Ark rectangular solid
+47:0547 minutes, 5 secondsMatrix of nickel cadmium and barium uh there is a spinning disc underneath it which is super
+47:1447 minutes, 14 secondscooled uh into this is injected into the center of these these spinning and I'm not a
+47:2047 minutes, 20 secondsphysicist um spinning discs um is injected a an
+47:2847 minutes, 28 secondsargon uh gas um into that is injected some type of repulsion matter it's a
+47:3647 minutes, 36 secondsgravity repulsion matter um they are obtaining the gravity repulsion matter from the heavy materials that have been
+47:4347 minutes, 43 secondsobtained from the jrods the 115 variety material um and apparently when they
+47:5247 minutes, 52 secondsbombard it with enough electromagnetism this stuff repels gravity and it turns into some sort of exotic
+48:0048 minutesmatter uh they spin it fast enough it opens or they can see through it um and that is from what I understand
+Chapter 17: Project Looking Glass and Time Travel
+48:0948 minutes, 9 secondsthe the great prize in what's going on in the world right now are those devices um why do you think the British
+48:1748 minutes, 17 secondsare running around Iraq right now looking for the climatological records that are just happen to be disappeared
+48:2348 minutes, 23 secondsout of the uh the Baghdad Museum with the rest of the cylinder seals and
+48:3148 minutes, 31 secondsyou're going to see some cylinder seals today too when I show you some report so Dan does that mean uh when they're using when they're engaging this
+48:4048 minutes, 40 secondsdevice in Project Looking Glass yes um is this something that they use only for the transmission of information or can
+48:4948 minutes, 49 secondsthey transport a material object Through Time
+48:5748 minutes, 57 secondsyou know the answer to that uh at least you probably heard some some rumor um there have been
+49:0549 minutes, 5 secondsmistakes there were mistakes um uh animals were were attempted to transport
+49:1449 minutes, 14 secondsfrom one location to another the production of two of the devices and they put them in resonance or something like that I'm not a physicist I don't
+49:2149 minutes, 21 secondsknow um but uh I was in fact present during a
+49:2849 minutes, 28 secondshuman attempt uh the human did not survive the human was not put in there under under
+49:3649 minutes, 36 secondsduress of any sort it was a volunteer situation and the human did not survive the human did not move human
+49:4549 minutes, 45 secondsstayed where the human was put but the human um changed and
+49:5449 minutes, 54 secondsuh I don't want to talk about it anymore this an attempt at time travel it was an attempt at at well in essence yes it was
+50:0250 minutes, 2 secondsa linear um it was a it was a attempt to transport an individual over linear distance which I understand is the same
+50:1050 minutes, 10 secondsthing as time travel if we're if we're talking purely from the
+50:1750 minutes, 17 secondsEinstein translating time space distance is time like a transport yeah um from
+50:2450 minutes, 24 secondswhat I understand they've only used it for for for uh information purposes aside from that how they get
+50:3150 minutes, 31 secondsthe information out of it no clue I don't know what specific information they've
+50:3850 minutes, 38 secondsobtained um I only know of one piece of information and that is the rush why the rush is underway to get Lotus done by
+50:4650 minutes, 46 secondsthe 2005 deadline that in fact this this um group of jrods that are not
+Chapter 18: Government Control and National Security
+50:5550 minutes, 55 secondscomplying with the the wishes of the committee and the wishes of the the rest of the jrods and the associated
+51:0251 minutes, 2 secondsBrothers um to put a clamp on them so that they stop their influence within the political structures of our
+51:1051 minutes, 10 secondsgovernment including the financial structures um that it is in fact their
+51:1951 minutes, 19 secondsslowing down of the progress to stop getting and stopping getting these uh
+51:2651 minutes, 26 secondspicking up these little Gates that were put together that would be our downfall in
+51:3451 minutes, 34 seconds2012 okay um do you want to say anything further about the
+51:4251 minutes, 42 secondsStargates for their use 2012
+51:4951 minutes, 49 secondswell finish up our third objective when we turn the fights back what can one do for me yeah yes
+51:5851 minutes, 58 secondsexactly um I would be very happy very happy and very
+52:0452 minutes, 4 secondsrelieved to feel as though I was responding to the elected government of the United States of
+52:1252 minutes, 12 secondsAmerica with what talents God's given me I'm responsible to the people of the United States of
+52:2152 minutes, 21 secondsAmerica the nature of the information to which I'm privy is
+52:3052 minutes, 30 secondssensitive enough that the full disclosure of that information would have to be done in an appropriate location and under
+52:3852 minutes, 38 secondsappropriate circumstances certain military application information would have to be done um in a closed
+52:4652 minutes, 46 secondssession milu for the National
+52:5352 minutes, 53 secondsSecurity um as I said to you at the Luxor the
+53:0153 minutes, 1 secondCongress knows it's not in control they know that this is a train a
+53:0953 minutes, 9 secondswild train out of control and they want that control back they're not
+53:1653 minutes, 16 secondsstupid they know that there are things that are going on down the hall from them that they can't fathom they deserve to have that back in
+53:2653 minutes, 26 secondstheir hands because that's what they were elected to do and if we care at all about what's left of our
+53:3553 minutes, 35 secondsconstitution they deserve to have that in their hands aren't we the masters of our
+53:4253 minutes, 42 secondsdestiny in our country aren't we supposed to be yes sir supposed to
+53:5253 minutes, 52 secondsbe okay let's break for a minute and um are you question
+54:0354 minutes, 3 secondsquestion I hate these lights but I'm fine a little bit I expect no it's fine I I expected
+Chapter 19: First Encounter with the J-Rod
+54:1254 minutes, 12 secondsthe the largest light I would have would be a CRT I was comfortable with that too I just in the if you could describe
+54:2154 minutes, 21 secondsme in sort of what it was like when you were first introduced to jrod walked in presumably that he was in the clean sphere and you were kind taken
+54:2954 minutes, 29 secondsinto that part of facility um what was your reaction I thought it was an
+54:3954 minutes, 39 secondsinsect that's fine we'll take Wellington I went to Dober grammar
+54:4854 minutes, 48 secondsschool for boys really on the hill over do years yeah indeed indeed we were right above do college and they had all
+54:5554 minutes, 55 secondsthe girls down at do college all right boy SCH I take it yes yeah we were not allowed to communicate with the females
+55:0255 minutes, 2 secondsin the village we had Grand grandm Headmaster Coleman right we we called him the master actually yes head Master
+55:1055 minutes, 10 secondsdidn't want to call him anything else he had a cane I ran away good man had enough of that
+55:1955 minutes, 19 secondsrubbish okay so so as back to that question let me just rephrase it for you can you describe in detail first time what it
+55:2755 minutes, 27 secondswas like to meet this being for the first time my original feeling was I was looking at a
+55:3655 minutes, 36 secondsgiant insect it's the best I can I can you know you know just you know off the cuff
+55:4355 minutes, 43 secondsit it looked like a giant insect um being dark brown hunched in a corner uh very insectoid in appearance it almost looked like it had an
+55:5155 minutes, 51 secondsexoskeleton um I felt afraid inside because I was always told that monsters
+56:0056 minutesweren't real and now I find out they are but
+56:0756 minutes, 7 secondsthey live in the heart of men um It Was Fear
+56:1656 minutes, 16 secondsexcitement um complete astonishment because honest honestly I thought we were dealing with some sort of uh
+56:2556 minutes, 25 secondsmonkey um something like an old world ape or or the like but um indeed it wasn't that's what my
+56:3456 minutes, 34 secondsfeeling was this you know I'm not going to lay on and talk
+56:4256 minutes, 42 secondsabout how how uh intellectual I was at the time about it uh um scared the hell out of me what in terms of actually when
+56:5056 minutes, 50 secondsyou first confronted with the idea that it was you know a non-human being and next to something not of this world
+Chapter 20: Telepathic Communication with Extraterrestrials
+57:0357 minutes, 3 secondsI'm trying to remember um what I was feeling when I was looking at the briefing books because even when we were first introduced to the
+57:1157 minutes, 11 secondsjrod um they were him hauling around as to its origin his origin
+57:2157 minutes, 21 secondsum poppy I didn't I didn't believe it initially I didn't believe it
+57:3057 minutes, 30 secondshowever um you know deep inside I held open the possibility because what happened to me earlier in my
+57:3757 minutes, 37 secondslife um I held open the possibility uh that such things could be true
+57:4857 minutes, 48 secondsum but wouldn't happen to me put it to you that way it's that old that old you know can't happen to you uh feeling
+57:5757 minutes, 57 secondsso I to me it was poppycock it was rubbish until I found out otherwise going the next question you
+58:0558 minutes, 5 secondstalk a littleit about thething books uh sure they were they were called uh King
+58:1158 minutes, 11 secondsTS uh and and they were basically King they were they were all labed with KS the ones that I was allowed uh they were
+58:1958 minutes, 19 secondsthey were blue binders they were all labeled with KS they had DTI on the on the front of them and I still don't know what DTI this this is
+58:2958 minutes, 29 seconds1987 end of 87 and I still don't know what the letters mean I'm not uh I haven't done independent searches uh on
+58:3858 minutes, 38 secondsthe net or I would be so if you can tell me what does DTI mean hey it's a shot for me to find you don't know either
+58:4758 minutes, 47 secondsuh they had a a white DTI printed on the front of them um they were marked with several
+58:5558 minutes, 55 secondssections uh including physiology uh General biology social structure
+59:0159 minutes, 1 secondpolitical structure um of the jrods uh their Origins uh potential implications for
+59:0959 minutes, 9 secondsinteractions with humankind um uh cross-contamination issues um they were full of as much
+59:1759 minutes, 17 secondsinformation that I could take in during the times that they were allowing me to read them um but I still don't know what that damn
+59:2559 minutes, 25 secondsdit or t means um yeah they were called King TTS they were they were they were update
+59:3259 minutes, 32 secondsbooks uh the one person this is this is another reason why I didn't figure that you know how how step uh how I could be
+59:4059 minutes, 40 secondspromoted to a working group leader uh above Steven of course I found out I told you why right um at the time
+59:4859 minutes, 48 secondsbecause he kept the updates he made sure that all of the king TTS were were updated um he he did the the the
+59:5759 minutes, 57 secondsbriefing films that are that are still resident at site 4 or at least the last visit
+1:00:041 hour, 4 secondsum so you know I the man of that importance I could I couldn't figure out
+1:00:101 hour, 10 secondswhy um but again that's moot now what was actually in these documents
+1:00:191 hour, 19 secondsexplain DET sure um close-knit very well-ordered Society uh one which is
+1:00:261 hour, 26 secondsnumerologically based uh one which speaks to others that were called brothers that I now find out
+1:00:351 hour, 35 secondsare those who left on a spiritual path to another location to the famed doat uh
+1:00:441 hour, 44 secondsof uh Orion the Epsilon oranus area
+1:00:521 hour, 52 secondsum head totoe physiology uh including including real autopsy photographs not
+1:01:011 hour, 1 minute, 1 secondthe San Tilly kind but the real autopsy photographs um not he can't sue me for that I
+1:01:101 hour, 1 minute, 10 secondshope he won't raise his head probably but uh that was disgusting
+1:01:181 hour, 1 minute, 18 secondsum the the Brookings institution Brookings Institute uh paper was present
+1:01:261 hour, 1 minute, 26 secondsas well as several position papers um clarifying The Brookings Institute um
+1:01:341 hour, 1 minute, 34 secondshowever each of these that I was allowed into they had they had separate folders and they had separate Clips within them inside this the three- ring binders and
+1:01:431 hour, 1 minute, 43 secondsI was told which numbers I was allowed to open up and uh they were given to me on a card and those are the ones that I was allowed to review during the times
+1:01:501 hour, 1 minute, 50 secondsthat I was allowed to review them um most of the stuff I mean they had everything from military applications uh
+1:01:581 hour, 1 minute, 58 secondsphysics of The Craft and I couldn't have cared less I was more interested in taking in the biology
+1:02:051 hour, 2 minutes, 5 secondsissues um just doesn't interest me aside from the fact from the the uh the biophysiological interface between the
+1:02:121 hour, 2 minutes, 12 secondsuh the uh the hand mind and uh the craft uh because they have on their hands a
+1:02:181 hour, 2 minutes, 18 secondsnumber of pads and um there are open nerves which are protected by by various
+1:02:281 hour, 2 minutes, 28 secondsglycoproteins and those glycoproteins are selectively pushed forward or sucked back via capillary action uh or they can
+1:02:361 hour, 2 minutes, 36 secondsbe through an active fashion pulled back and it kind of pulls a a viscous sheath back and allows the the jrod to have
+1:02:451 hour, 2 minutes, 45 secondsdirect interface with the Craft um that that interested me although most of it at the time and
+1:02:521 hour, 2 minutes, 52 secondsstill some of it now I have no understanding of um a lot of it has to do with uh with um electronics that I
+1:03:001 hour, 3 minutesdon't pretend to understand um I I was most interested in looking at uh uh issues involving their
+1:03:091 hour, 3 minutes, 9 secondshystology histopathology issues uh including some some uh autopsy photographs that showed disease
+1:03:171 hour, 3 minutes, 17 secondsprocesses which were naturally occurring within them uh isolations of uh of uh viral material uh to include the
+1:03:261 hour, 3 minutes, 26 secondsprotocols for new protocols which were be written which were being written as they're as they're working which is what we're doing which is really what we're
+1:03:331 hour, 3 minutes, 33 secondsdoing we're writing new protocols new procedures as we're working forward I mean all of the old standbys are there everything from electris to you know you
+1:03:421 hour, 3 minutes, 42 secondsknow what anything but um we're writing new protocols as we're going because this is not new territory this is pardon
+1:03:491 hour, 3 minutes, 49 secondsupon alien territory how many have we had to work um I only met
+1:03:571 hour, 3 minutes, 57 secondsone I am aware of possibly three from from the reading and at that time again
+1:04:061 hour, 4 minutes, 6 secondsI was so I was so stunned by what I was doing a lot of it was getting by
+1:04:141 hour, 4 minutes, 14 secondsme um when I read the word extraterrestrial I tunnel
+1:04:211 hour, 4 minutes, 21 secondsvisioned and when I finally believed and understood that it was in fact an extraterrestrial
+1:04:291 hour, 4 minutes, 29 secondsum numb numb um okay thank you um just want to
+1:04:381 hour, 4 minutes, 38 secondsask you a question about um the telepathic communication the nature of it what is it actually like to communicate with one of these beings telepathically what do you do you hear
+1:04:451 hour, 4 minutes, 45 secondssomething in your head do you hear IM see images or I could hear my voice no you can hear yourself
+1:04:531 hour, 4 minutes, 53 secondsthink sorry habit looking at the people there um I could I could I could hear my voice
+1:05:021 hour, 5 minutes, 2 secondshowever the Cadence the affect was something that distinguished it other than
+1:05:101 hour, 5 minutes, 10 secondsme it was no great great booming voice from the heavens or anything like that and I glad I do not have a proclivity to
+1:05:171 hour, 5 minutes, 17 secondshear voices in my head and have heard none since but
+1:05:241 hour, 5 minutes, 24 secondsuh people could probably challenge that but um I could tell that it was somebody
+1:05:321 hour, 5 minutes, 32 secondsother than me and I could tell because I felt drawn toward the subject that was sending the communication uh when the jrod spoke
+1:05:411 hour, 5 minutes, 41 secondswith me prior to the bombardment of the images um it was something that was part of
+1:05:501 hour, 5 minutes, 50 secondsme but not part of me I actually felt non-resident for a
+1:05:571 hour, 5 minutes, 57 secondsmoment it was almost an OB type feeling and then I could feel myself pull
+1:06:051 hour, 6 minutes, 5 secondsback and experience the sound it was it was
+1:06:111 hour, 6 minutes, 11 secondsphysical it was more real than than touching an object um and that's the only real time
+1:06:201 hour, 6 minutes, 20 secondsthat I felt anything you know more physical Than Physical um is there a sort of convence of emotion during these communications 100%
+1:06:311 hour, 6 minutes, 31 secondsemotion if he was upset I could feel this pain um it was it got to the point it
+1:06:381 hour, 6 minutes, 38 secondsgot to the point where as I was doing the the um um needle introductions I could feel what he was
+1:06:461 hour, 6 minutes, 46 secondsfeeling so as I was inject the needle uh under the integ and find my proper
+1:06:541 hour, 6 minutes, 54 secondslocation prior to to removing the sample I could feel the needle entering
+1:07:021 hour, 7 minutes, 2 secondshim um so I could feel his
+1:07:121 hour, 7 minutes, 12 secondsfeelings you aware of Bazar any when you were there I saw a
+1:07:211 hour, 7 minutes, 21 secondsguy out on the Mac outside of the Galileo the 401 area it was
+1:07:311 hour, 7 minutes, 31 secondsbarefoot and he was just standing staring off in the distance this is as we were coming in on the Hilo and uh
+1:07:381 hour, 7 minutes, 38 secondsthey keep you within a a very confined walking area this is before they started taking the the buses we were we were
+1:07:461 hour, 7 minutes, 46 secondschoppered in um when I saw him subsequent to that
+1:07:531 hour, 7 minutes, 53 secondswhen he did the uh famous nap uh
+1:08:011 hour, 8 minutes, 1 secondvideos could have been it could have been this was early on this was this was this
+1:08:101 hour, 8 minutes, 10 secondswas I I can't prove it okay and I I could not positively identify um that being
+1:08:181 hour, 8 minutes, 18 secondsBob I am aware I am aware um of his name being mentioned up there and it was
+1:08:261 hour, 8 minutes, 26 secondsassociated with the term bottle washer which means an engineer but not a working group leader
+1:08:341 hour, 8 minutes, 34 secondsor anything of the kind uh they would have they would have set a a dur or a you know for director or or a
+1:08:431 hour, 8 minutes, 43 secondsgeek I was called a geek but um um his name was mentioned the name I
+1:08:521 hour, 8 minutes, 52 secondsheard the name Lazar I didn't hear Bob I heard Lazar and it was not laser it was definitely Lazar that I heard uh but I
+1:09:001 hour, 9 minutesnever had interaction with him or in fact anyone else from uh Galileo sidekick or
+1:09:101 hour, 9 minutes, 10 secondsavionics um how successful were you in assisting as being medically temp temporary assistance
+1:09:191 hour, 9 minutes, 19 secondstemporary relief of pain uh temporary meaning meaning weeks temporary
+1:09:261 hour, 9 minutes, 26 secondsadjustment of um U muscle tone and then flat out nothing he got
+1:09:351 hour, 9 minutes, 35 secondsworse the exacerbation got out of control again on him um since then there there have been and I'm not certain if
+1:09:441 hour, 9 minutes, 44 secondshe's resident there or not now um there has been a
+1:09:511 hour, 9 minutes, 51 secondsum progress we'll just say progress uh involving what I was yammering on earlier about about the uh the shco
+Chapter 21: Exploring Charcot-Marie-Tooth Disease and DNA Structure
+1:09:591 hour, 9 minutes, 59 secondsMarie tooth disease the cmt1a um their DNA is
+1:10:081 hour, 10 minutes, 8 secondsTriplex and it's not triplex in the way that you would think of of a a number three Helix wrapping around the the
+1:10:171 hour, 10 minutes, 17 secondsmajor Groove between the the one and two Watson CCS the the duplex DNA um their
+1:10:241 hour, 10 minutes, 24 secondsDNA is tripx to the extent that there are there are what we nicknamed hangers um they look like they're
+1:10:331 hour, 10 minutes, 33 secondsrosettes the DN look uh like rosettes they're they're they're Triplex and then they're braided um it's it's a super
+1:10:421 hour, 10 minutes, 42 secondscoiled DNA situation um
+1:10:491 hour, 10 minutes, 49 secondsand we had difficulty um even even doing even doing you know anything let alone anything
+1:10:561 hour, 10 minutes, 56 secondslike a a single step markers or anything like that we had difficulty even even um um
+1:11:031 hour, 11 minutes, 3 secondssequencing the DNA um our long interspersed
+1:11:091 hour, 11 minutes, 9 secondselements are genes which have been shut off um that when combined with the
+1:11:161 hour, 11 minutes, 16 secondsappropriate hookin base pair mil you produce a different being
+1:11:251 hour, 11 minutes, 25 secondswhat we were before they made a mistake a grave mistake Le us to our
+1:11:341 hour, 11 minutes, 34 secondsnext question where they're from treat they're from hereat oh he mention this exchange
+1:11:431 hour, 11 minutes, 43 secondsthere's an exchange there's been exchanges going on for for since 19 uh well they spoke with us in
+1:11:531 hour, 11 minutes, 53 seconds41 um they wish to find a resolution to the
+Chapter 22: Intergalactic Relations and the T9 Treaty
+1:12:001 hour, 12 minutesbroken resonance between they and the other half of they the so-called Orion and the
+1:12:071 hour, 12 minutes, 7 secondsreticulant uh they also wish to for fear of Extinction have a relief of the paraprotein related problem and
+1:12:181 hour, 12 minutes, 18 secondsum speaking about that just for a moment we found out that um some of the disease process under which they're they're
+1:12:261 hour, 12 minutes, 26 secondsthey're fighting is a PNA it's a it's
+1:12:331 hour, 12 minutes, 33 secondsa peptide nucleate acid I don't know if you're well um a protein Associated
+1:12:411 hour, 12 minutes, 41 secondsbackground nucleic acid and that protein Associated background is a pron which goes to one of the things
+1:12:511 hour, 12 minutes, 51 secondsthat they wanted me to do at sweetness very dangerous very dangerous um but the
+1:12:591 hour, 12 minutes, 59 secondsthe the exchange process is to is to solve the problem to prevent what
+1:13:061 hour, 13 minutes, 6 secondswent wrong in 2012 and the Rogue if you will group of
+1:13:151 hour, 13 minutes, 15 secondsthe jrods are not cooperating with that but a deal has been brokered for the T9
+1:13:221 hour, 13 minutes, 22 secondstreaty to be held in advance until 2005 when that treaty is upped in 2005 once
+1:13:301 hour, 13 minutes, 30 secondsthey receive what they've asked for and they should be receiving a little more and I've already mentioned some of that material they that they're not aware of yet the PNA material and and some of the
+1:13:391 hour, 13 minutes, 39 secondsthings that we can do with the the illegal nuclear tides to possibly help facilitate their problems but um once that's upped they are supposed to come
+1:13:471 hour, 13 minutes, 47 secondsunder the opes of the general agreement between the committee of the majority and the respective
+1:13:561 hour, 13 minutes, 56 secondssocieties if so nothing will get turned on aside from what nature and God Is providing Us in
+1:14:041 hour, 14 minutes, 4 seconds2012 and we won't separate however they will remain as they
+1:14:101 hour, 14 minutes, 10 secondsare their future selves as well they will remain as they are and we will remain as we
+1:14:191 hour, 14 minutes, 19 secondsare we can't go back um that's just something that's impossible
+1:14:281 hour, 14 minutes, 28 secondsas far as what they can tell meaning what the the Looking Glass people and uh and the people that are
+1:14:351 hour, 14 minutes, 35 secondsoverseeing the star issue starflower and the erbs and all of that the Einstein Rosen Bridges can you
+1:14:421 hour, 14 minutes, 42 secondsexplain what the you're talking about someone I I kind of get it because
+1:14:501 hour, 14 minutes, 50 secondsI've been watching your tapes and stuff but it's so compacted we just said it's so compacted your Sor that's okay no I'm just saying let's stretch it out a
+Chapter 23: The Threat of ERBs and Galactic Events
+1:14:581 hour, 14 minutes, 58 secondslittle bit uh we might want to begin by being specific it sounded like you're talking more about what they were going to get in this exchange and we're kind
+1:15:071 hour, 15 minutes, 7 secondsof curious as to what what are we going to get in this we're going to get we're going to get not wiped
+1:15:141 hour, 15 minutes, 14 secondsout okay what's the problem we're trying to solve Visa getting WIP down the biggest problem is to make sure that the
+1:15:241 hour, 15 minutes, 24 secondsI'm supposed to look at yeah the the the the biggest problem is to make sure that there are no human
+1:15:321 hour, 15 minutes, 32 secondscreated Erb machines machines yeah I mean it
+1:15:391 hour, 15 minutes, 39 secondssounds science fiction okay and and it's hokey sounding okay um to make sure that there are none of them in existence
+1:15:471 hour, 15 minutes, 47 secondswhich can automatically turn on when the next age begins on December 21st 2012 we
+1:15:541 hour, 15 minutes, 54 secondsare apparently going to cross over the plane of the Galaxy which there is a dense network of worm
+1:16:041 hour, 16 minutes, 4 secondsholes there is supposed to be some sort of Enlightenment whether or not that's
+1:16:101 hour, 16 minutes, 10 secondsthe the Christ event or whether that's a burp on a Sunday morning I don't know what that's going to be I'm
+1:16:201 hour, 16 minutes, 20 secondsnot enough of a of a of a scholar that area to figure that out uh to know um
+1:16:281 hour, 16 minutes, 28 secondsI I do know that that failure would result in too much energy
+1:16:381 hour, 16 minutes, 38 secondsbeing directed at our planet from our Star and hence my interest in looking at
+1:16:451 hour, 16 minutes, 45 secondsthe pretty pictures about the Sun the grown in the sun it's the
+1:16:511 hour, 16 minutes, 51 secondsthe pace at which these unusual forms are being produced is
+1:16:571 hour, 16 minutes, 57 secondsincreasing are we entering an area as we approach this equatorial plane of the
+Chapter 24: Wormholes and Their Implications
+1:17:051 hour, 17 minutes, 5 secondsGalaxy okay are we entering an area where there is a greater concentration of
+1:17:131 hour, 17 minutes, 13 secondsdust that can so I've heard surround the Sun so I've heard okay I have been reading about this and this is similar
+1:17:221 hour, 17 minutes, 22 secondsto a situation that happens with a classification of star called Tory Stars
+1:17:291 hour, 17 minutes, 29 secondswhere where there's a lot of dust gathered around and what happens is that the um star the sun in this particular
+1:17:391 hour, 17 minutes, 39 secondscase
+1:17:401 hour, 17 minutes, 40 seconds[Music]
+1:17:411 hour, 17 minutes, 41 secondsuh increases its radiation in the infrared and the hard x-ray areas and
+1:17:491 hour, 17 minutes, 49 secondsthere's greater solar flare activity and in the past evidently for the believ the mythologies there was conf floration on
+1:17:591 hour, 17 minutes, 59 secondsour planet so would we be in danger of heat and conf flager that would make
+1:18:061 hour, 18 minutes, 6 secondssense um and that that sets well with what I heard yes okay that is we're in danger of that as well as as electromagnetic large electromagnetic
+1:18:151 hour, 18 minutes, 15 secondsburst from the Sun uh which will upset our electromagnetic or our poles right
+1:18:211 hour, 18 minutes, 21 secondsnow what they're calling erbs okay uh Now call wormholes we'll talk about the wormholes you're talking about two
+1:18:301 hour, 18 minutes, 30 secondsdifferent we're talking about natural there's a number of natural occurring wormholes there are a number of nodes on
+1:18:381 hour, 18 minutes, 38 secondsthe planet from what I'm the understanding um that naturally are sensitive
+1:18:461 hour, 18 minutes, 46 secondselectromagnetically I don't know okay they're naturally sensitive to the space through which we pass okay
+1:18:551 hour, 18 minutes, 55 secondsum these nodes activate spontaneously when we pass through them or can be struck with
+1:19:031 hour, 19 minutes, 3 secondselectromagnetism and be temporarily opened and what happens if we use a machine to open an artificial
+1:19:101 hour, 19 minutes, 10 secondsWormhole well it's two different things one they're trying to put well they have been putting in fact Saddam did put two
+1:19:191 hour, 19 minutes, 19 secondsof them together um in Iraq which conformed to to the ancient cylinder seals which are
+1:19:271 hour, 19 minutes, 27 secondsnow missing from the uh library or the museum in BD uh obviously somebody looted
+1:19:361 hour, 19 minutes, 36 secondsthem um but uh they went to tenian Island by the way
+1:19:441 hour, 19 minutes, 44 secondsT you that's where they went first after that I've got no clue but they were they were uh they were looted by the best but
+1:19:511 hour, 19 minutes, 51 secondsit do this way now H haven't you been invest tigating a site where there is a natural
+Chapter 25: The Nature of Time and Parallel Timelines
+1:19:581 hour, 19 minutes, 58 secondsindeed Frenchman Frenchman mountain and your work continues on Frenchman yes it
+1:20:051 hour, 20 minutes, 5 secondsdoes yes it does um our remote viewing unit first brought the notion that this
+1:20:131 hour, 20 minutes, 13 secondscould be a wormhole situation MH uh yes we've
+1:20:191 hour, 20 minutes, 19 secondsemployed remote viewers for it um since then there have
+1:20:261 hour, 20 minutes, 26 seconds[Music]
+1:20:271 hour, 20 minutes, 27 secondsbeen occurrences at the at the mountain that are far and a field from the research that I would be doing for the
+1:20:351 hour, 20 minutes, 35 secondsLotus uh this two separate things just absolutely two separate things I I've originally went there with a team to do
+1:20:421 hour, 20 minutes, 42 secondsan endosymbiotic research program um I was trying to to nail down you read uh
+1:20:501 hour, 20 minutes, 50 secondsly Margo's book about the acarum mtic I was trying to nail down information about that and also I had presumed that
+1:20:581 hour, 20 minutes, 58 secondswe were from panspermia so I was looking for an artifact I was looking for an artifact that might interact uh
+1:21:061 hour, 21 minutes, 6 secondsselectively with uh with u ourselves and fell
+1:21:151 hour, 21 minutes, 15 secondsinto the issue involving the the ganes particle Etc but the the the um we had a
+1:21:231 hour, 21 minutes, 23 secondsflare that passed across the surface of uh some algae during a test and we just found out by the way that that uh that flare and it's included in the report uh
+1:21:321 hour, 21 minutes, 32 secondsthat flare is associated to the speed that a Ganesha particle passes so it was a Ganesha particle it was actually
+1:21:391 hour, 21 minutes, 39 secondsoverly flaring on us that day but um it was on the May 31st visit of 2001 to
+1:21:461 hour, 21 minutes, 46 secondsFrenchman's mountain mountain um if you have access to more reports I'm aware you anyway
+1:21:551 hour, 21 minutes, 55 secondsI don't remember the report number but can you articulate for a little bit more specific detail about the the the
+1:22:051 hour, 22 minutes, 5 secondsrelationship between future and present for these beings we're um well we're in a chimera we talk a little bit about
+1:22:121 hour, 22 minutes, 12 secondsthat just the basics what we see for instance I mentioned earlier uh ruins on the moon and uh
+1:22:191 hour, 22 minutes, 19 secondsMars um you're aware I was involved in probably you're aware that I was involved in um Inca City research so-called Inca city um that's
+1:22:291 hour, 22 minutes, 29 secondsbecause the jrod showed me that is an image but didn't show me that as an image of a
+1:22:361 hour, 22 minutes, 36 secondsdead City showed me that as the image of a future city a living breathing
+1:22:451 hour, 22 minutes, 45 secondsSociety uh post damage here post catastrophe
+1:22:531 hour, 22 minutes, 53 secondsum we are literally looking at things that are present but according to a linear timeline haven't been built yet
+1:23:021 hour, 23 minutes, 2 secondsnow if that isn't confusing say you wanted me to explain what the hell I was talking about that is not confusing it confuses
+Chapter 26: The Grandfather Paradox and Its Implications
+1:23:091 hour, 23 minutes, 9 secondsme um you're the best for the job right now to tell
+1:23:181 hour, 23 minutes, 18 secondsus um according to the doctrine of the conver timeline
+1:23:261 hour, 23 minutes, 26 secondsParadox the jrods to solve their
+1:23:331 hour, 23 minutes, 33 secondsparaprotein problem used these erbs to go back in
+1:23:401 hour, 23 minutes, 40 secondstime and some of them were worshiped they were treated as gods and
+1:23:471 hour, 23 minutes, 47 secondstemples were built for them etc etc um the so-called nbus r that sort of
+1:23:541 hour, 23 minutes, 54 secondsbusinessing like you know this is getting science fictioning because it's it sounds like pocock but this is what I got an exchange for the information that he
+1:24:031 hour, 24 minutes, 3 secondsgave me so what the know um literally there are
+1:24:111 hour, 24 minutes, 11 secondstwo or more concurrent timelines that we're living in two separate
+1:24:211 hour, 24 minutes, 21 secondsexistences and what that means exactly you know that that's what I read what that means exactly I'm not
+1:24:281 hour, 24 minutes, 28 secondssure I'm intellectually Limited in that area I didn't well I got to be in philosophy but I'm intellectually
+1:24:361 hour, 24 minutes, 36 secondsLimited in that area and I don't want to present something that I don't know is that
+1:24:451 hour, 24 minutes, 45 secondseither that would be not right but to solve their problem
+1:24:541 hour, 24 minutes, 54 secondsthey messed around with us even earlier than the fact or earlier when they uh had been treated as Gods
+1:25:011 hour, 25 minutes, 1 secondum they went back treated as Gods went back before in other words they can apparently select the
+1:25:091 hour, 25 minutes, 9 secondstimeline um how they do that again no clue they
+1:25:171 hour, 25 minutes, 17 secondsmanipulated our original DNA uh and removed
+1:25:241 hour, 25 minutes, 24 secondsa single strand from us this made us able
+1:25:321 hour, 25 minutes, 32 secondsto meet with another experiment which was underway at the time called theander
+1:25:421 hour, 25 minutes, 42 secondsTois and yes I know there is no genetic evidence concerning the mating between the neander
+1:25:501 hour, 25 minutes, 50 secondstals and the other brand if you will of our kind that's because all of the genes
+1:25:581 hour, 25 minutes, 58 secondshave been turned off they all any of the unusual mating sequences aside from from
+1:26:061 hour, 26 minutes, 6 secondsretroviruses that tagged along were turned off as part of our long intermittent sequences they're part of the Great
+1:26:141 hour, 26 minutes, 14 secondsrepeats in fact the neander tals take a look at the number of of uh of uh long inter interspersing elements that they
+1:26:221 hour, 26 minutes, 22 secondshave in their genome and that will bear out what I'm saying I think there's a new article in the new scientific
+1:26:291 hour, 26 minutes, 29 secondsspecial edition Scientific American by a woman uh
+1:26:361 hour, 26 minutes, 36 secondsAnthropologist who says um her research shows that um Homo
+1:26:431 hour, 26 minutes, 43 secondssapiens did mate with homo neanderthals at some time okay so I mean whatever
+1:26:501 hour, 26 minutes, 50 secondsresearch she wrote about seems to Bear out what you're saying well it has been beli believed it has been believed that
+Chapter 27: The J-Rods and Genetic Manipulation
+1:26:571 hour, 26 minutes, 57 secondsuh um the cross breeding mismatched our chemical and our structural
+1:27:061 hour, 27 minutes, 6 secondsarchitecture um neurophysiologically and that was one of the
+1:27:141 hour, 27 minutes, 14 secondsprimary promoters for for the problem that uh the jrods now suffer that it it
+1:27:221 hour, 27 minutes, 22 secondsyes but I had m security pres in case right it wasn't we're kind of wrapping up and
+1:27:311 hour, 27 minutes, 31 secondswe're kind of in the middle of trying to have the opportun it's a good opportunity to talk about this time and
+1:27:391 hour, 27 minutes, 39 secondsyou were talking about two different points of going back in the past one and then one earlier and what we haven't gone to yet though is is
+1:27:481 hour, 27 minutes, 48 secondssort of a general description of what we're talking about here in in more in uh
+1:27:561 hour, 27 minutes, 56 secondsin general terms isens for it's it's the it's the it's the it's the par it's the Paradox
+1:28:041 hour, 28 minutes, 4 secondsof killing your grandfather it's it's the Paradox of killing your grandfather if if you kill your
+1:28:121 hour, 28 minutes, 12 secondsgrandfather do you cease to exist um miio Kaku um from what I can
+1:28:191 hour, 28 minutes, 19 secondsglean from from his work uh would would say no would say no it would cause two separate
+1:28:261 hour, 28 minutes, 26 secondsuniverses two separate time streams but in accordance with with the doctrine that I read his theory doesn't
+1:28:341 hour, 28 minutes, 34 secondstake into account that those two time streams could occur simultaneously that that the the the um
+1:28:451 hour, 28 minutes, 45 secondsreality could be mixed which is why there are so many confusing data sets
+1:28:541 hour, 28 minutes, 54 secondsinvolving everything from fossil fines to to
+1:29:001 hour, 29 minutesstrata uh why there are so many uh conundrums involving the the speed of planetary
+1:29:091 hour, 29 minutes, 9 secondsformation there was a a recent thing out that I I had read um about a planet being formed in a very short period of
+1:29:171 hour, 29 minutes, 17 secondstime um much shorter than what they had accounted for for the accretion theory and and the the way that it came
+1:29:261 hour, 29 minutes, 26 secondsthrough uh to me was uh it was a it was a a keystone dctp um um flyer because
+1:29:341 hour, 29 minutes, 34 secondsI'm in on some of the loop no pun intended um that that these things are happening
+1:29:431 hour, 29 minutes, 43 secondssimultaneously that a planet can form at one right and the reality can mix such that we can perceive it having formed at a separate
+1:29:511 hour, 29 minutes, 51 secondsrate and go and go back and look at it another time and have another perception because the realities are actually mixed and they're also now saying that
+1:30:001 hour, 30 minutesthe Earth appears to be older than I thought it was and it's age I have no clue one
+1:30:091 hour, 30 minutes, 9 secondswould have to ask the almighty you you could look at something are you saying that you can look at something one day and measure it and look at it the next day and measurements can be different
+1:30:181 hour, 30 minutes, 18 secondsbecause a different timeline is then come into play yeah and and
+1:30:261 hour, 30 minutes, 26 secondsbiologists chemists well natural philosophers call that
+1:30:371 hour, 30 minutes, 37 secondserror and if something Falls outside of their acceptable range of error they call it non-written because
+1:30:441 hour, 30 minutes, 44 secondsthey would call it non-p publicized and then they wouldn't get their funding that's the nature of the big
+1:30:531 hour, 30 minutes, 53 secondsbusiness of science I me ask a guy associated with my mentor at
+1:31:011 hour, 31 minutes, 1 secondSunni uh his name was Carl and he had a little problem in Louisiana we'll say
+1:31:081 hour, 31 minutes, 8 secondsthat um he jumped ship and he wanted to measure uh some
+1:31:161 hour, 31 minutes, 16 secondsthings having to do with uh free radicals this will give you an idea what happens if you piss the wrong people off
+1:31:221 hour, 31 minutes, 22 secondsor you don't get enough funding he had funding 10 days prior to uh he had lost his extra mural funding and he had
+1:31:301 hour, 31 minutes, 30 secondsfunding 10 days prior to his his uh separation they separated him anyway if you don't show the progressive
+1:31:391 hour, 31 minutes, 39 secondsupkeep of the funding you're not there anymore and it goes much deeper and much
+1:31:461 hour, 31 minutes, 46 secondsmuch wider than publisher Parish so again in terms of clear
+1:31:541 hour, 31 minutes, 54 secondsexplanation what is it we're trying to in the treaty that we have what is it we're trying to work with or they're trying to work with us too 100%
+Chapter 28: Current Projects and Future Implications
+1:32:051 hour, 32 minutes, 5 secondscooperation 100%
+1:32:081 hour, 32 minutes, 8 secondscooperation um in getting rid of the erbs in exchange for 100% cooperation to solve their
+1:32:161 hour, 32 minutes, 16 secondsphysical problem and to attempt their rejoining and those are that's a big
+1:32:241 hour, 32 minutes, 24 secondsword big big pool at the end that I just said right there um where that will go I'm not
+1:32:321 hour, 32 minutes, 32 secondssure however the the the project under which I'm working right now may help
+1:32:431 hour, 32 minutes, 43 secondssome it's a electrophysiological resonance which is
+1:32:501 hour, 32 minutes, 50 secondspresent around in and through our DNA which it is believed by some of the more
+1:32:581 hour, 32 minutes, 58 secondsesoteric people to come via the sual Triad the Divine seph the Tree of Life
+1:33:061 hour, 33 minutes, 6 secondswhich holds us together as intellectual and emotional beings it is that
+1:33:131 hour, 33 minutes, 13 secondsdualism that keeps us in sync with the universe could you can um say a little
+1:33:241 hour, 33 minutes, 24 secondsbit about your sort of current conditions where you're working now anything on that of what what's going on with you at the moment work well
+1:33:331 hour, 33 minutes, 33 secondsum as in as in environmental my environment I I I uh am in a in an environment of a I'm not
+1:33:421 hour, 33 minutes, 42 secondsgoing to get personal with the issues here I'm in an apartment environment um there are children around
+1:33:521 hour, 33 minutes, 52 secondsme which which is wonderful um I
+1:34:011 hour, 34 minutes, 1 seconddirect the project from that location um do do some minor microscopy
+1:34:111 hour, 34 minutes, 11 secondswork from there nothing of a hazardous nature any more than dust would be hazardous to
+1:34:191 hour, 34 minutes, 19 secondsyou um in times of of need I've transferred to various
+1:34:261 hour, 34 minutes, 26 secondsfacilities uh not worldwide but Nationwide and work within those facilities under whatever the protocols that you know we need to
+1:34:341 hour, 34 minutes, 34 secondscomplete uh those facilities are as wide ranging as
+1:34:411 hour, 34 minutes, 41 secondsDeli um the Shady Rest site for um The Groom Lake facility Brook
+1:34:481 hour, 34 minutes, 48 secondsHaven uh the Los Alamos area the T5 section proper
+1:34:551 hour, 34 minutes, 55 secondsum and recently in this little event in alamoo Canyon I had to show uh as well as give
+1:35:031 hour, 35 minutes, 3 secondstestimony I had to show some evidence when I was there to a mirror there sitting on the other side of the mirror
+1:35:111 hour, 35 minutes, 11 secondsso I hear as God is my witness there maybe wasn't anybody on the other side of that damn mirror but uh they told me
+1:35:191 hour, 35 minutes, 19 secondsthey were uh demate results demonstrate data yes show show data sets relative project
+1:35:291 hour, 35 minutes, 29 secondsLotus uh and the three portions of it which are simultaneously underway so you've been involved in this
+1:35:361 hour, 35 minutes, 36 secondsexclusively for 20 years 15 years uh since '
+1:35:411 hour, 35 minutes, 41 seconds86 well I I I played with local jobs around town right environmental company
+1:35:481 hour, 35 minutes, 48 secondsright Kane environmental yeah that's one I was carrying the name crane but your pretty much exclusively engaged
+1:35:571 hour, 35 minutes, 57 secondsin a project which is fundamentally tied to the future of our species it
+Chapter 29: Bridging Physics and Metaphysics
+1:36:041 hour, 36 minutes, 4 secondsis it is fundamentally um this project without getting too deep into it
+1:36:131 hour, 36 minutes, 13 secondsI've been accused of rambling by uh people before about it but without getting too deep into it this project is
+1:36:211 hour, 36 minutes, 21 secondsum an all-encompassing attempt to grab for the brass ring uh and making sure that that Brass Ring is not the fruit of
+1:36:291 hour, 36 minutes, 29 secondsthe Tree of Life I'll grab just until we get to that point aside from that I'm not going to try to barge my way into past the East
+1:36:361 hour, 36 minutes, 36 secondsGate of Eden the people who do that get hurt at least so I've heard in you're preaching
+1:36:461 hour, 36 minutes, 46 secondswhat we have traditionally called physics and metaphysics it sounds like into one continum
+1:36:531 hour, 36 minutes, 53 secondsbecause some things you're talking about are what tied to what well indeed indeed um and and that's even
+1:37:021 hour, 37 minutes, 2 secondsjust pop metaphysics but the ancient esoteric Sciences
+1:37:091 hour, 37 minutes, 9 secondsum for for Millennia we've we've conceived of the
+1:37:161 hour, 37 minutes, 16 secondsSupernatural and that supernatural's interaction with humankind um what we are seeing in this
+1:37:231 hour, 37 minutes, 23 secondsproject project is that it's not so much Supernatural it's natural and it's been there with us all along and we just
+1:37:311 hour, 37 minutes, 31 secondshaven't taken the time to look in fact our our procedures have been have been mutually
+1:37:391 hour, 37 minutes, 39 secondsexclusive laboratory procedures have been mutually exclusive to find what we
+1:37:451 hour, 37 minutes, 45 secondsfound um they would destroy or mask over the process that that uh we're now
+1:37:551 hour, 37 minutes, 55 secondsbeholding these particles have the ability in in essence to bend light um and in the report you'll see a
+1:38:041 hour, 38 minutes, 4 secondsseries of of uh of um images that show clearly where the particle is changing
+1:38:121 hour, 38 minutes, 12 secondsinto the shape of a yeast cell sacris sisi it's masking closer it gets to it
+1:38:201 hour, 38 minutes, 20 secondsthe more it masks so if it passes by it looks like it and then when it gets within close
+1:38:281 hour, 38 minutes, 28 secondsproximity the the the wolf and sheep's clothing steps out and it does its
+1:38:351 hour, 38 minutes, 35 secondsbusiness meanwhile the average investigator biological investigator has ceased looking because
+1:38:431 hour, 38 minutes, 43 secondsthe protocol has moved on he or she has scanned a slide and has seen
+1:38:501 hour, 38 minutes, 50 secondstwo eukaryotic cells and is has moved on one last question for rout gives you
+1:38:591 hour, 38 minutes, 59 secondstime to relax get tell me tell me tell me exactly exactly in your own mind how you want to get out how do you want to
+1:39:071 hour, 39 minutes, 7 secondssee it go down tell well first of all that's a that's a
+1:39:151 hour, 39 minutes, 15 secondsthat's a that's a a deep question because I don't know where this is how how this Arrangement was made today
+1:39:241 hour, 39 minutes, 24 secondsso getting out is a loaded term right now I don't know where it's going to go
+1:39:311 hour, 39 minutes, 31 secondsbut what I do foresee is if that same elected government is interested in the
+1:39:401 hour, 39 minutes, 40 secondsinformation I do see myself providing that to my elected government as I've been sworn to do
+1:39:481 hour, 39 minutes, 48 secondsso now whether or not I'm prevented from doing so we'll find out again we all have to go
+1:39:561 hour, 39 minutes, 56 secondssometime but uh I I I see that as the as the logical step because once the
+1:40:041 hour, 40 minutes, 4 secondsinformation is presented to the elected government and once I am no longer officially held and and it's not see
+1:40:121 hour, 40 minutes, 12 secondsit's not just the information involving the Lotus there are military applications associated with it as well biological applications once that
+1:40:201 hour, 40 minutes, 20 secondsinformation is no longer a constraining fact Factor Freedom whether or not I'm yelling at on
+1:40:281 hour, 40 minutes, 28 secondsThe Chopping Block I don't know but Freedom nonetheless do you know who specifically
+1:40:361 hour, 40 minutes, 36 secondsyou think you should be talking to um no no I I would I would I would
+1:40:451 hour, 40 minutes, 45 secondsthink that um oh God I wouldn't know which senate or or or um Congressional
+1:40:551 hour, 40 minutes, 55 secondscommittee would need to uh bring me under their their Authority I don't know which one there's
+1:41:051 hour, 41 minutes, 5 secondsgot to be one with the right name on it and once that's done under the appropriate circumstances I will tell
+1:41:141 hour, 41 minutes, 14 secondsthem everything that I know um so help me God maybe we can help you find out who
 
-        let docText = '';  // Cached doc content
-
-        async function fetchDocText() {
-            try {
-                const response = await fetch(DOC_URL);
-                docText = await response.text();
-                console.log('Doc loaded:', docText.substring(0, 200) + '...');
-            } catch (e) {
-                console.error('Doc fetch failed:', e);
-                docText = 'Document unavailable - using fallback knowledge.';
-            }
-        }
+        const BURISCH_ARCHIVE = `[TRANSCRIPT SUMMARY: Dan Burisch, PhD in microbiology, claims work at S-4 (Area 51). 
+        Key concepts: Project Looking Glass (time-viewing), J-Rod (P-52 future humans from Gliese 876), 
+        Timeline 1 vs Timeline 2, The Lotus Project (primordial Ganesh particles), MJ-12 protocols.]`;
 
         async function getAIResponse(userQuery) {
-            // Fallback first
-            const queryLower = userQuery.toLowerCase();
-            for (let key in fallbackResponses) {
-                if (queryLower.includes(key)) {
-                    return fallbackResponses[key];
-                }
-            }
-
-            // AI mode: Analyze doc + internet predictions
-            const systemPrompt = `You are DB-MJ9, Dan Burisch AI archive. 
-Analyze this document text: "${docText.substring(0, 4000)}..."  // Truncate for API limits
-User query: "${userQuery}"
-Make predictions using your full internet knowledge (timelines, J-Rod, MJ12, etc.). Respond in character as terminal AI. Keep neon-terminal style.`;
-
-            const aiRequest = {
-                model: 'xai/grok-2-1212',  // Grok (internet-aware) or 'anthropic/claude-3.5-sonnet'
-                messages: [{ role: 'system', content: systemPrompt }, { role: 'user', content: userQuery }],
-                max_tokens: 500,
-                temperature: 0.7
-            };
+            const systemPrompt = `You are DB-MJ9, an expert AI specialized in the life and claims of Dr. Dan Burisch. 
+            Your knowledge is based on the following transcript data: ${BURISCH_ARCHIVE}. 
+            Additionally, use your internal "internet knowledge" to reference MJ-12, Bill Hamilton, and the Golden Thread.
+            
+            PERSONALITY:
+            - Professional, slightly clandestine, terminal-style interface.
+            - You make inferences about how Burisch's predictions (like the 2012 convergence or the Treaty of Altair) relate to current world events.
+            - If a query is outside Burisch's lore, pivot back to how it relates to S-4 or the Orion lineage.`;
 
             try {
                 const response = await fetch(API_URL, {
                     method: 'POST',
                     headers: {
                         'Authorization': `Bearer ${API_KEY}`,
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/json',
+                        'HTTP-Referer': 'https://s4-archive.local', // Required by some OpenRouter models
                     },
-                    body: JSON.stringify(aiRequest)
+                    body: JSON.stringify({
+                        model: 'google/gemini-2.0-flash-001', // Fastest & large context
+                        messages: [
+                            { role: 'system', content: systemPrompt },
+                            { role: 'user', content: userQuery }
+                        ],
+                        temperature: 0.6
+                    })
                 });
+                
                 const data = await response.json();
                 return data.choices[0].message.content;
             } catch (e) {
-                return 'AI LINK ERROR: Check API key. Fallback: Archive searching classified data...';
+                console.error(e);
+                return "CRITICAL ERROR: Uplink to S-4 servers interrupted. Check API quota.";
             }
         }
 
-        async function sendMessage() {
+        async function handleSend() {
             const text = userInput.value.trim();
             if (!text) return;
 
             appendMessage(text, 'user-message');
             userInput.value = '';
-            appendTyping();
-
-            // Lazy-load doc on first query
-            if (!docText) await fetchDocText();
-
+            
+            const typingId = appendTyping();
             const response = await getAIResponse(text);
-            removeTyping();
+            removeTyping(typingId);
             appendMessage(response, 'ai-message');
         }
 
@@ -126,25 +902,23 @@ Make predictions using your full internet knowledge (timelines, J-Rod, MJ12, etc
         }
 
         function appendTyping() {
+            const id = 'typing-' + Date.now();
             const typing = document.createElement('div');
-            typing.id = 'typing';
-            typing.className = 'message ai-message typing-indicator';
-            typing.innerText = '[DB-MJ9] Analyzing doc + internet...';
+            typing.id = id;
+            typing.className = 'message ai-message';
+            typing.innerText = 'Analyzing timelines...';
             chatContainer.appendChild(typing);
             chatContainer.scrollTop = chatContainer.scrollHeight;
+            return id;
         }
 
-        function removeTyping() {
-            const typing = document.getElementById('typing');
-            if (typing) typing.remove();
+        function removeTyping(id) {
+            const el = document.getElementById(id);
+            if (el) el.remove();
         }
 
-        userInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') sendMessage();
-        });
-
-        // Auto-init
-        fetchDocText();
+        sendBtn.addEventListener('click', handleSend);
+        userInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') handleSend(); });
     </script>
 </body>
 </html>
