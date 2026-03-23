@@ -12,6 +12,10 @@
             --terminal-font: 'Courier New', Courier, monospace;
         }
 
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             background-color: var(--dark-bg);
             color: var(--neon-green);
@@ -27,7 +31,7 @@
         body::before {
             content: " ";
             display: block;
-            position: absolute;
+            position: fixed;
             top: 0; left: 0; bottom: 0; right: 0;
             background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
                         linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
@@ -37,42 +41,58 @@
         }
 
         header {
-            padding: 20px;
+            padding: 15px 20px;
             border-bottom: 2px solid var(--neon-green);
             text-align: center;
             background: rgba(0, 255, 65, 0.05);
+            flex-shrink: 0;
         }
 
         h1 {
             margin: 0;
-            font-size: 1.5rem;
+            font-size: clamp(1.2rem, 4vw, 1.8rem);
             text-transform: uppercase;
-            letter-spacing: 4px;
+            letter-spacing: 0.1em;
         }
 
         .status-bar {
-            font-size: 0.8rem;
+            font-size: clamp(0.7rem, 2.5vw, 0.9rem);
             margin-top: 5px;
             color: #008f11;
         }
 
         #chat-container {
             flex: 1;
-            padding: 20px;
+            padding: clamp(10px, 3vw, 20px);
             overflow-y: auto;
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 12px;
             scrollbar-width: thin;
             scrollbar-color: var(--neon-green) transparent;
         }
 
+        #chat-container::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        #chat-container::-webkit-scrollbar-track {
+            background: var(--panel-bg);
+        }
+
+        #chat-container::-webkit-scrollbar-thumb {
+            background: var(--neon-green);
+            border-radius: 3px;
+        }
+
         .message {
-            max-width: 80%;
-            padding: 10px 15px;
-            border-radius: 4px;
+            max-width: min(90%, 500px);
+            padding: clamp(8px, 2vw, 12px) clamp(12px, 3vw, 15px);
+            border-radius: 6px;
             line-height: 1.4;
             position: relative;
+            word-wrap: break-word;
+            hyphens: auto;
         }
 
         .ai-message {
@@ -86,7 +106,7 @@
             font-weight: bold;
             display: block;
             margin-bottom: 5px;
-            font-size: 0.7rem;
+            font-size: 0.85em;
         }
 
         .user-message {
@@ -97,11 +117,12 @@
         }
 
         .input-area {
-            padding: 20px;
+            padding: clamp(15px, 4vw, 20px);
             background: var(--panel-bg);
             border-top: 1px solid var(--neon-green);
             display: flex;
             gap: 10px;
+            flex-shrink: 0;
         }
 
         input {
@@ -109,23 +130,30 @@
             background: black;
             border: 1px solid var(--neon-green);
             color: var(--neon-green);
-            padding: 10px;
+            padding: clamp(8px, 2vw, 10px);
             font-family: var(--terminal-font);
+            font-size: clamp(14px, 4vw, 16px);
             outline: none;
+            min-height: 44px;
         }
 
         button {
             background: var(--neon-green);
             color: black;
             border: none;
-            padding: 10px 20px;
+            padding: clamp(8px, 2vw, 10px) clamp(15px, 4vw, 20px);
             cursor: pointer;
             font-family: var(--terminal-font);
             font-weight: bold;
             text-transform: uppercase;
+            font-size: clamp(14px, 3.5vw, 16px);
+            min-height: 44px;
+            white-space: nowrap;
+            flex-shrink: 0;
         }
 
-        button:hover {
+        button:hover,
+        button:focus {
             background: #fff;
         }
 
@@ -134,6 +162,36 @@
             font-size: 0.8rem;
             margin-bottom: 10px;
             display: none;
+            align-self: flex-start;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 12px 15px;
+            }
+
+            .message {
+                max-width: 95%;
+            }
+
+            .input-area {
+                padding: 12px 15px;
+                gap: 8px;
+            }
+
+            input {
+                margin-bottom: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 14px;
+            }
+
+            h1 {
+                letter-spacing: 0.05em;
+            }
         }
     </style>
 </head>
